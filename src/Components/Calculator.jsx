@@ -1,44 +1,55 @@
 import React, { useState } from "react";
 import "./calculator.css";
+
 const Calculator = () => {
   let [result, setResult] = useState("");
 
   const handleClick = (e) => {
+    const newSymbol = e.target.name;
+    const lastChar = result.charAt(result.length - 1);
+
     if (result.length >= 16) {
-      setResult("!Tooo Big Input");
+      setResult("!Too Big Input");
       return;
     }
-    if (result.charAt(0) === "0") {
+
+    if (result.charAt(0) === "0" && result.length === 1) {
+      return;
+    } else if (result.charAt(0) === "0") {
       result = result.slice(1, result.length);
     }
-    setResult(result.concat(e.target.name));
+
+    const operators = ["+", "-", "*", "/", "."];
+
+    if (operators.includes(newSymbol) && operators.includes(lastChar)) {
+      return;
+    }
+    setResult(result.concat(newSymbol));
   };
 
   const clear = () => {
     setResult("");
   };
+
   const backSpace = () => {
     setResult(result.slice(0, result.length - 1));
   };
 
   const calculate = () => {
     try {
-      result = eval(result).toString();
-      if (result.includes(".")) {
-        result = +eval(result);
-        result = result.toFixed(4).toString();
-        setResult(result);
-      } else {
-        setResult(eval(result).toString());
+      let calculatedResult = eval(result).toString();
+      if (calculatedResult.includes(".")) {
+        calculatedResult = +calculatedResult;
+        calculatedResult = calculatedResult.toFixed(4).toString();
       }
+      setResult(calculatedResult);
     } catch (err) {
-      setResult("Error");
+      setResult(result);
     }
   };
-
   return (
     <div className="container">
-      <h3>Simple React Calculator</h3>
+      <h3>Calculator</h3>
       <form action="">
         <input type="text" value={result} />
       </form>
