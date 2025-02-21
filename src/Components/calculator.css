@@ -1,0 +1,89 @@
+.container{
+    background-color: linear-gradient();
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+    
+}
+form input {
+    margin: 10px 0 20px;
+    padding: 10px;
+    border: none;
+    border-top: 4px solid #e3912e;
+    border-top-right-radius: 50px;
+    font-weight: bolder;
+}
+form input:hover{
+    background-color: #e7e6e3;
+    color: #171717;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 20px;
+    
+}
+
+button{
+    margin: 5px;
+    border-radius: 50%;
+    color: rgb(246, 244, 243);
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+    background: black;
+    width: 80px;
+    height: 70px;
+    border: none;
+}
+
+button.equal{
+    position: absolute;
+    background-color: #f79d0c;
+    color: #fff;
+    height: 150px;
+    width: 80px;
+    top: 460px;
+    border-radius: 10px;
+    border-bottom-left-radius: 50px;
+}
+.equal.color:hover{
+    background: linear-gradient(to right, #999896 0%, #E5E5BE  51%, #615f5d  100%);
+} 
+
+.special button{
+    background-color: #f8ac33;
+    color: #fff;
+    border: none;
+    border-bottom-left-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.special button:hover{
+    background-position: right center; 
+    background: linear-gradient(to right, #999896 0%, #E5E5BE  51%, #615f5d  100%);   
+}
+.color{
+    background-color: #c4b32f;
+    color: #fff;
+    border: none;
+    border-bottom-left-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+}    
+
+button:hover{
+    background-position: right center; 
+    background: linear-gradient(to right, #dd8407 0%, #E5E5BE  51%, #c15701  100%);
+    color: #171717;
+    text-decoration: none;
+    transform: scale( 1.1 );
+    transition: background-position 0.5s ease, color 0.5s ease, transform 0.5s ease; 
+    
+    
+}
